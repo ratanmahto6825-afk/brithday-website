@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Letter for Riya 💌</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --pink:#ff4da6;
+}
+
+/* BASE */
+body{
+  margin:0;
+  height:100vh;
+  overflow:hidden;
+  font-family: Georgia, serif;
+  background:#fff7fb;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* BALLOON BACKGROUND */
+.balloon{
+  position:absolute;
+  bottom:-120px;
+  font-size:42px;
+  animation: floatUp linear infinite;
+  opacity:0.9;
+}
+
+@keyframes floatUp{
+  from{ transform: translateY(0); }
+  to{ transform: translateY(-130vh); }
+}
+
+/* CONTAINER */
+.container{
+  width:90%;
+  max-width:380px;
+  text-align:center;
+  z-index:2;
+}
+
+/* TITLES */
+.title{
+  font-size:24px;
+  color:var(--pink);
+}
+
+.subtitle{
+  font-style:italic;
+  color:#777;
+  margin-bottom:22px;
+}
+
+/* ENVELOPE */
+.envelope{
+  position:relative;
+  width:100%;
+  height:230px;
+  background:#ffd6e8;
+  border-radius:16px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.15);
+  overflow:hidden;
+}
+
+/* FLAP */
+.flap{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#ffb6d3;
+  clip-path:polygon(0 0,100% 0,50% 55%);
+  transform-origin:top;
+  transition:transform 1s ease;
+  z-index:3;
+}
+
+/* LETTER */
+.letter{
+  position:absolute;
+  bottom:-100%;
+  left:50%;
+  transform:translateX(-50%);
+  width:90%;
+  background:#fff;
+  border-radius:12px;
+  padding:18px;
+  box-shadow:0 12px 24px rgba(0,0,0,0.12);
+  transition:bottom 1s ease;
+  z-index:2;
+  text-align:left;
+}
+
+/* OPEN */
+.envelope.open .flap{
+  transform:rotateX(180deg);
+}
+
+.envelope.open .letter{
+  bottom:12px;
+}
+
+/* LETTER TEXT */
+.letter h3{
+  margin:0;
+  color:var(--pink);
+  font-style:italic;
+}
+
+.letter p{
+  font-size:15px;
+  line-height:24px;
+  color:#444;
+  margin-top:10px;
+  font-style:italic;
+}
+
+/* BUTTONS */
+.btn{
+  margin-top:18px;
+  padding:14px 26px;
+  border:none;
+  border-radius:40px;
+  background:linear-gradient(135deg,#ff4da6,#ff7eb3);
+  color:white;
+  font-size:17px;
+  cursor:pointer;
+  box-shadow:0 12px 24px rgba(255,77,166,0.4);
+}
+
+.btn.secondary{
+  background:#fff;
+  color:var(--pink);
+  border:2px solid rgba(255,77,166,0.2);
+  box-shadow:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- BALLOONS -->
+<script>
+const balloons = ["🎈","🎈","🎈","🎈"];
+for(let i=0;i<14;i++){
+  const b = document.createElement("div");
+  b.className = "balloon";
+  b.innerText = balloons[Math.floor(Math.random()*balloons.length)];
+  b.style.left = Math.random()*100 + "vw";
+  b.style.animationDuration = 6 + Math.random()*6 + "s";
+  document.body.appendChild(b);
+}
+</script>
+
+<div class="container">
+  <div class="title">💌 A Special Letter</div>
+  <div class="subtitle">From Ratan to Riya</div>
+
+  <div class="envelope" id="envelope">
+    <div class="flap"></div>
+    <div class="letter">
+      <h3>Dear Riya,</h3>
+      <p>
+        This letter carries a small piece of my heart,
+        wrapped carefully in words and emotions.
+        I hope when you read this,
+        you feel the warmth behind every line.
+        <br><br>
+        — Ratan 💖
+      </p>
+    </div>
+  </div>
+
+  <button class="btn" onclick="openLetter()">Open the Letter 💝</button>
+  <br><br>
+  <a href="page2.html" class="btn secondary">Continue ✨</a>
+</div>
+
+<script>
+function openLetter(){
+  document.getElementById("envelope").classList.add("open");
+}
+</script>
+
+</body>
+</html>

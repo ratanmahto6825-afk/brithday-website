@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>A Birthday Letter for Riya 💌</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --pink:#ff4da6;
+}
+
+/* BASE */
+body{
+  margin:0;
+  height:100vh;
+  overflow:hidden;
+  font-family: Georgia, serif;
+  background:#fff7fb;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* BALLOON BACKGROUND (same as Page 3) */
+.balloon{
+  position:absolute;
+  bottom:-120px;
+  font-size:42px;
+  animation: floatUp linear infinite;
+  opacity:0.9;
+}
+@keyframes floatUp{
+  from{ transform: translateY(0); }
+  to{ transform: translateY(-130vh); }
+}
+
+/* CONTAINER */
+.container{
+  width:90%;
+  max-width:460px;
+  z-index:2;
+}
+
+/* LETTER PAPER */
+.letter{
+  background:#fff;
+  border-radius:18px;
+  padding:28px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* TITLE */
+.title{
+  text-align:center;
+  color:var(--pink);
+  font-size:22px;
+  margin-bottom:16px;
+}
+
+/* TEXT */
+.letter h3{
+  margin:0;
+  font-style:italic;
+  color:#333;
+}
+
+.letter p{
+  font-size:16px;
+  line-height:27px;
+  color:#444;
+  margin-top:14px;
+  font-style:italic;
+}
+
+/* SIGNATURE */
+.signature{
+  margin-top:24px;
+  font-style:italic;
+  color:#333;
+}
+
+/* BUTTON */
+.btn{
+  display:block;
+  margin:24px auto 0;
+  padding:14px 30px;
+  border:none;
+  border-radius:40px;
+  background:linear-gradient(135deg,#ff4da6,#ff7eb3);
+  color:white;
+  font-size:17px;
+  cursor:pointer;
+  box-shadow:0 12px 24px rgba(255,77,166,0.4);
+  text-align:center;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- BALLOONS -->
+<script>
+const balloons = ["🎈","🎈","🎈","🎈"];
+for(let i=0;i<12;i++){
+  const b = document.createElement("div");
+  b.className = "balloon";
+  b.innerText = balloons[Math.floor(Math.random()*balloons.length)];
+  b.style.left = Math.random()*100 + "vw";
+  b.style.animationDuration = 6 + Math.random()*6 + "s";
+  document.body.appendChild(b);
+}
+</script>
+
+<div class="container">
+  <div class="letter">
+    <div class="title">💌 A Birthday Letter</div>
+
+    <h3>Dear Riya,</h3>
+
+    <p>
+      Today is your birthday, and while many people will wish you happiness,
+      I wanted to do it in a way that truly reflects how special you are to me.
+      Somewhere along the way, We became more than just a friend —
+      you became someone my heart quietly chose.
+    </p>
+
+    <p>
+      With you, moments feel warmer and smiles last longer.
+      I catch myself thinking about you in the simplest parts of my day,
+      and it always brings a calm happiness I can’t quite explain.
+      
+    </p>
+
+    <p>
+      On your special day, I just want you to know that you are admired,
+      cared for, and thought of in ways that go beyond words.
+      I don’t know where life will lead us.
+    </p>
+
+    <p>
+      May this year bring you joy, love, and beautiful moments,
+      and may you always feel how special you truly are —
+      not just today, but every day.
+     </p>
+
+     <p>
+      Wish you many many happy retruns of the day
+    </p>
+
+    <div class="signature">
+      Always thinking of you,<br>
+      <strong>Ratan</strong> 💖
+    </div>
+  </div>
+
+  <a href="page4.html" class="btn">Continue ✨</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The End ✨</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --pink:#ff4da6;
+}
+
+/* BASE */
+body{
+  margin:0;
+  height:100vh;
+  overflow:hidden;
+  font-family: 'Poppins', system-ui, Arial;
+  background:#fff7fb;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+/* BALLOON BACKGROUND */
+.balloon{
+  position:absolute;
+  bottom:-120px;
+  font-size:42px;
+  animation: floatUp linear infinite;
+  opacity:0.9;
+}
+@keyframes floatUp{
+  from{ transform: translateY(0); }
+  to{ transform: translateY(-130vh); }
+}
+
+/* CONTAINER */
+.container{
+  width:90%;
+  max-width:420px;
+  z-index:2;
+}
+
+/* CARD */
+.card{
+  background:#fff;
+  border-radius:20px;
+  padding:28px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* TITLE */
+h1{
+  color:var(--pink);
+  margin-top:0;
+  font-size:26px;
+}
+
+.subtitle{
+  color:#777;
+  margin-bottom:20px;
+}
+
+/* MESSAGE */
+.message{
+  font-size:16px;
+  line-height:26px;
+  color:#444;
+  font-style:italic;
+}
+
+/* HEART */
+.heart{
+  font-size:34px;
+  margin:18px 0;
+  animation:pulse 1.6s infinite;
+}
+
+@keyframes pulse{
+  0%{ transform:scale(1); }
+  50%{ transform:scale(1.15); }
+  100%{ transform:scale(1); }
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:22px;
+  padding:14px 34px;
+  border:none;
+  border-radius:40px;
+  background:linear-gradient(135deg,#ff4da6,#ff7eb3);
+  color:white;
+  font-size:17px;
+  cursor:pointer;
+  box-shadow:0 12px 24px rgba(255,77,166,0.4);
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- BALLOONS -->
+<script>
+const balloons = ["🎈","🎈","🎈","🎈"];
+for(let i=0;i<12;i++){
+  const b = document.createElement("div");
+  b.className = "balloon";
+  b.innerText = balloons[Math.floor(Math.random()*balloons.length)];
+  b.style.left = Math.random()*100 + "vw";
+  b.style.animationDuration = 6 + Math.random()*6 + "s";
+  document.body.appendChild(b);
+}
+</script>
+
+<div class="container">
+  <div class="card">
+    <h1>🎂 Happy Birthday</h1>
+    <div class="subtitle">And that’s the little surprise ✨</div>
+
+    <div class="message">
+      I hope this brought a smile to your face and made your day
+      feel just a little more special.  
+      Some moments don’t need many words —  
+      just sincerity, warmth, and a genuine wish.
+    </div>
+
+    <div class="heart">💖</div>
+
+    <div class="message">
+      May your days be light, your smiles be plenty,
+      and your year ahead be kind to you.
+    </div>
+
+    <p>
+     Sun baklol ab pagal mat ho jaana or jada udna bhi mat or haa 20 ko aaja bhr chalte hai kahi ab mana mat karna 
+    </p>
+
+    <a href="#" class="btn">The End 🌸</a>
+    <a href="index.html" class="btn">Start again 🌸</a>
+  </div>
+</div>
+
+</body>
+</html>
